@@ -19,7 +19,7 @@
 % end
 
 % Loading SURROGATES HARMONICS U0
-load('data\SC_surrogates_harmonics')
+load(fullfile(datapath,'data\SC_surrogates_harmonics'))
 
 %% -------- the following lines do the following: -------------
 % - calculate the surr BD (BD of the functional data decomposed on the surrogate
@@ -42,7 +42,7 @@ load('data\SC_surrogates_harmonics')
 % end
 
 % Loading SURROGATES BD 
-load('data\results\BD_surr')
+load(fullfile(datapath,'data\results\BD_surr'))
 
 %% organize the surrogate and the empirical BD and prepare for plot
 for p=1:size(func_data,2)

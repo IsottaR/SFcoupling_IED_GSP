@@ -3,7 +3,7 @@
 %count number of harmonics needed to represent 80% of the total power in C1
 %and C2
 for p=1:size(func_data,2)
-    clearvars -except data_GSP1 struct_data p func_data clusters N_heaviest_harm clust_permutest t
+    clearvars -except data_GSP1 struct_data p func_data clusters N_heaviest_harm clust_permutest t datapath
 
     data_sub=data_GSP1(p).step1;
 

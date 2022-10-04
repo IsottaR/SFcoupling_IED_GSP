@@ -6,12 +6,16 @@
 %% STEP 2 - SDI vs surrogates, SDI in clusters
 
 clear; clc; close all
+
 restoredefaultpath
 addpath('functions')
 
-load('data\results\data_GSP1')
-load('data\results\clust_permutest')
-load('data\results\struct_data')
+%get path where data are (store them in folder above SFcoupling_IED_GSP)
+[datapath,name,ext] = fileparts(pwd);
+
+load(fullfile(datapath,'data\results\data_GSP1'))
+load(fullfile(datapath,'data\results\clust_permutest'))
+load(fullfile(datapath,'data\results\struct_data'))
 
 %new structure for the results
 data_GSP2=rmfield(data_GSP1,'step1');
@@ -29,7 +33,7 @@ data_GSP2=rmfield(data_GSP1,'step1');
 %     PHIdiag(PHIdiag==0)=-1;
 %     PHI(n,:,:)=diag(PHIdiag);
 % end
-load('data\PHI')
+load(fullfile(datapath,'data\PHI'))
 
 %% PARAGRAPH 2.6.3
 
@@ -59,13 +63,13 @@ for p=1:size(data_GSP1,2)
     data_GSP2(p).step2=GSP_SDI;
     clear GSP_SDI
 end
-save('data\results\data_GSP2','data_GSP2')
+save(fullfile(datapath,'data\results\data_GSP2'),'data_GSP2')
 
 % -------------------------- SURROGATE SDI -------------------------------- 
 %this script takes very long. Load surrogates already computed instead
 
 % surrogateSDI              
-load('data\results\data_GSP2_surr')
+load(fullfile(datapath,'data\results\data_GSP2_surr'))
 
 % --------------------------------STATS -----------------------------------
 %(threshold SDI comparing it with the surrogates SDI)
@@ -134,7 +138,7 @@ for lat=1: size(pat,2)
 
         cnt=cnt+1;
     end
-    save(['data\results\SDI_surr_thresh_',char(labels(lat))],'surr_thresh')
+    save(fullfile(datapath,['data\results\SDI_surr_thresh_',char(labels(lat))]),'surr_thresh')
 end
 
 clear SDI_all_pat SDI SDI_sig_higher SDI_sig_lower SDI_sig SDI_thr_max SDI_thr_min

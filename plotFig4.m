@@ -5,11 +5,11 @@ threshold=5;%retain ROI significant in at leats 6/9 patients
 % threshold=2;%retain ROI significant in at leats 3/9 patients
 
 %load ROI patch
-load(fullfile('data\ROIpatch.mat'))
+load(fullfile(datapath,'data\ROIpatch.mat'))
 
 for lat=1: length(lateralization)
     
-    load(['data\results\SDI_surr_thresh_',char(lateralization(lat))])
+    load(fullfile(datapath,['data\results\SDI_surr_thresh_',char(lateralization(lat))]))
     thr=find([surr_thresh.threshold]==threshold);
     
     % plot coupled and decoupled ROIs

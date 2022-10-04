@@ -6,7 +6,6 @@
 
 %% STEP 1 -GSP, integration/segregation, compactness, BD
 
-
 clear; clc;close all
 
 addpath('functions')
@@ -14,22 +13,25 @@ addpath('functions')
 %initialise variables
 time_w=[.3 .7]; %time window for analyses, in sec
 
+%get path where data are (store them in folder above SFcoupling_IED_GSP)
+[datapath,name,ext] = fileparts(pwd);
+
 %load data
-load ('data\func_data')
-load ('data\struct_data')
+load(fullfile(datapath,'data\func_data'))
+load(fullfile(datapath,'data\struct_data'))
 
 % decompose SC
 [U,LambdaL] = laplacian_decomposition(struct_data.SC  );
 struct_data.U=U;
 struct_data.eigenvalues=LambdaL;
 
-save('data\results\struct_data')
+save(fullfile(datapath,'data\results\struct_data'),'struct_data')
 %new structure for the results
 data_GSP1=rmfield(func_data,'ROI_traces');
 
 %% PARAGRAPH 2.5
 for p=1:size(func_data,2)
-    clearvars -except data_GSP1 c_avg_timeseries_norm d_avg_timeseries_norm func_data p time_w struct_data
+    clearvars -except data_GSP1 c_avg_timeseries_norm d_avg_timeseries_norm func_data p time_w struct_data datapath
     data_sub=func_data(p).ROI_traces;
 
     %------- define cut-off frequency for each subject on the 400 ms around the IED
@@ -74,5 +76,5 @@ plotFigS2  % compactness on clusters
 plotFigS3 %do broadcasting direction (BD) nalyses and plot results
 
 %save step1 results
-save('data\results\data_GSP1','data_GSP1')
-save('data\results\clust_permutest','clust_permutest')
+save(fullfile(datapath,'data\results\data_GSP1'),'data_GSP1')
+save(fullfile(datapath,'data\results\clust_permutest'),'clust_permutest')
