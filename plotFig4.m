@@ -9,7 +9,7 @@ load(fullfile(datapath,'data\ROIpatch.mat'))
 
 for lat=1: length(lateralization)
     
-    load(fullfile(datapath,['data\results\SDI_surr_thresh_',char(lateralization(lat))]))
+    eval(['surr_thresh=SDI_surr_thresh_',char(lateralization(lat))]);
     thr=find([surr_thresh.threshold]==threshold);
     
     % plot coupled and decoupled ROIs

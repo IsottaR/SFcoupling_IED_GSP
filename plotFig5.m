@@ -7,9 +7,6 @@ threshold=5;%retain ROI significant in at leats 6/9 patients
 %load ROI patch
 load(fullfile(datapath,'data\ROIpatch.mat'))
 
-%load empirical SDI values
-load(fullfile(datapath,'data\results\data_GSP2'))
-
 for lat=1:size(lateralization,2)
     for p=1:size(pat{1,lat},2)
         id_sub=pat{1,lat}(p);
@@ -21,9 +18,9 @@ for lat=1:size(lateralization,2)
         SDI_all_pat_c2{lat}(:,p)=log(data_GSP2(id_sub).step2.SDIc2);
     end
     
-    %load mask of significant ROI (from comparison with surrogates)
-    load(fullfile(datapath,['data\results\SDI_surr_thresh_',char(lateralization(lat))]))
-    
+    %mask of significant ROI (from comparison with surrogates)
+    eval(['surr_thresh=SDI_surr_thresh_',char(lateralization(lat))]);
+
     %variable to test
     val=SDI_all_pat_c2{lat} -SDI_all_pat_c1{lat};
 
