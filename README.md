@@ -3,7 +3,7 @@ Repository for paper on structure-function coupling during epileptic spikes usin
 
 Download the preprocessed data from Zenodo: TBC
 
-Run the scripts main1.m and main2.m to produce the analyses and the figures of the paper
+Run the script main.m to produce the analyses and the figures of the paper
 
 How to organize the data folders so the scripts run smoothly:
 - your_path/data
