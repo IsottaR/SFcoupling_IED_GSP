@@ -37,9 +37,11 @@ load(fullfile(datapath,'data\SC_surrogates_harmonics'))
 %         [surrBD_single_subj_norm_diff(w,:)]=get_surrogate_BD(squeeze(U0(w,:,:)),data_sub.zX_RS);
 %     end
 %     
-%     %store and sa
+%     %store 
 %     BD_surr(p).BD=surrBD_single_subj_norm_diff;
 % end
+%%store
+% save(fullfile(datapath,'data\results\BD_surr'),'BD_surr')
 
 % Loading SURROGATES BD 
 load(fullfile(datapath,'data\results\BD_surr'))
@@ -91,7 +93,9 @@ halfIEDtime_point=find(t>=0.4836,1);%halfIEDtime_avg
 endIEDtime_point=find(t>=0.5042,1);%endIEDtime_avg
 
 %reorder the subjects
-subj_order=[2 5 7 9 11 13 17 3 18 14 1 4 6 8 10 12 15 16];
+subj_order=[10 12 14 16 4 5 8 11 9 6 1 2 13 15 3 17 7 18];
+
+
 figure;
 imagesc(sig_pvalp(subj_order,:))
 colormap(brewermap(256,'RdYlBu'))

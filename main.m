@@ -11,6 +11,7 @@
 
 clear; clc;close all
 
+restoredefaultpath
 addpath('functions')
 
 %initialise variables

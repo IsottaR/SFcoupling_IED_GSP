@@ -26,4 +26,4 @@ for p=1:size(data_GSP1,2)
     data_GSP2_surr(p).step2=GSP_SDI;
 end
 
-save('data\results\data_GSP2_surr','data_GSP2_surr')
+save(fullfile(datapath,'data\results\data_GSP2_surr'),'data_GSP2_surr')
