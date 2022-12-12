@@ -155,12 +155,12 @@ pat{1,2}=find(strcmp({data_GSP2_surr.lat},'Ltle'));
 labels={'Rtle','Ltle'};
 
 for lat=1: size(pat,2)
-
+    clearvars SDI_all_pat SDI_surr surr_thresh mean_SDI max_SDI_surr min_SDI_surr SDI_thr_max SDI_thr_min detect_max detect_min
     for p=1:length(pat{1,lat})
          idx=pat{1,lat}(p);
 
         % load SDI from surrogates and convert to log(SDI)
-        SDI_surr(:,:,p)=log(data_GSP2_surr(idx).step2.SDIsurr(:,1:19));
+        SDI_surr(:,:,p)=log(data_GSP2_surr(idx).step2.SDIsurr);
         
         % load empirical SDI and convert to log(SDI)
         SDI_all_pat(:,p)=log(data_GSP2(idx).step2.SDI);

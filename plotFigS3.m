@@ -8,7 +8,9 @@
 %     % get surrogates SC
 %     W0(n,:,:) = null_model_und_sign(num,10);
 % end
-% 
+%save(fullfile(datapath,'data\SC_surrogates'),'W0')
+ 
+
 % %decompose W0 and extract the surrogate harmonics (U0)
 % for n=1:1000
 %     clear U Lambda
@@ -17,6 +19,7 @@
 %     U0(n,:,:)=U;
 %     LambdaL0(n,:)=Lambda;
 % end
+% save(fullfile(datapath,'data\CIAO'),'U0')
 
 % Loading SURROGATES HARMONICS U0
 load(fullfile(datapath,'data\SC_surrogates_harmonics'))
@@ -93,7 +96,7 @@ halfIEDtime_point=find(t>=0.4836,1);%halfIEDtime_avg
 endIEDtime_point=find(t>=0.5042,1);%endIEDtime_avg
 
 %reorder the subjects
-subj_order=[10 12 14 16 4 5 8 11 9 6 1 2 13 15 3 17 7 18];
+subj_order=[10 12 14 4 5 8 11 9 6 1 2 13 15 3 16 7 17];
 
 
 figure;

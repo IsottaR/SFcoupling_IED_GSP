@@ -1,13 +1,23 @@
 %% VISUALIZE THE RESULTS
 
 lateralization={'Rtle','Ltle'};
-threshold=5;%retain ROI significant in at leats 6/9 patients
-% threshold=2;%retain ROI significant in at leats 3/9 patients
 
 %load ROI patch
 load(fullfile(datapath,'data\ROIpatch.mat'))
 
 for lat=1: length(lateralization)
+        clear surr_thresh
+
+        %select the correct threshold, according to the sample size of the
+    %group
+    if lat==1
+        threshold=6;%retain ROI significant in at leasts 7/9 patients (75%)
+        % threshold=2;%retain ROI significant in at leats 3/9 patients
+    elseif lat==2
+        threshold=5;%retain ROI significant in at leasts 6/8 patients (75%)
+        % threshold=2;%retain ROI significant in at leats 3/8 patients
+    end
+    
     
     eval(['surr_thresh=SDI_surr_thresh_',char(lateralization(lat))]);
     thr=find([surr_thresh.threshold]==threshold);
