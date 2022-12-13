@@ -1,6 +1,6 @@
-%% ------- the following lines do the folowing: -------------
-% - create the degree-preserving surrogate SC (W0)
-% - decompose W0 and extract the surrogate harmonics (U0)
+%% ------- the following lines do the following: -------------
+% - create and store the degree-preserving surrogate SC (W0)
+% - decompose W0, extract the surrogate harmonics (U0) and store them
 % - load U0 already computed instead
 
 % % create the degree-preserving surrogate SC (W0)
@@ -19,14 +19,14 @@
 %     U0(n,:,:)=U;
 %     LambdaL0(n,:)=Lambda;
 % end
-% save(fullfile(datapath,'data\CIAO'),'U0')
+% save(fullfile(datapath,'data\SC_surrogates_harmonics'),'U0')
 
 % Loading SURROGATES HARMONICS U0
 load(fullfile(datapath,'data\SC_surrogates_harmonics'))
 
 %% -------- the following lines do the following: -------------
-% - calculate the surr BD (BD of the functional data decomposed on the surrogate
-%   harmonics (N=1000))
+% - calculate the surrogate BD (BD of the functional data decomposed on the surrogate
+%   harmonics U0 (N=1000)) and store them
 % - load the ones already calculated, as the script takes too long
 
 % BD_surr=rmfield(data_GSP1,'step1');

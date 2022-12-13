@@ -1,8 +1,6 @@
 %% VISUALIZE THE RESULTS
 
 lateralization={'Rtle','Ltle'};
-threshold=5;%retain ROI significant in at leats 6/9 patients
-% threshold=2;%retain ROI significant in at leats 3/9 patients
 
 %load ROI patch
 load(fullfile(datapath,'data\ROIpatch.mat'))

@@ -142,7 +142,7 @@ for p=1:size(data_GSP1,2)
 end
 
 % -------------------------- SURROGATE SDI -------------------------------- 
-%this script takes very long. Load surrogates already computed instead
+%the script 'surrogateSDI.m' takes very long. Load surrogates already computed instead
 
 % surrogateSDI              
 load(fullfile(datapath,'data\results\data_GSP2_surr'))
