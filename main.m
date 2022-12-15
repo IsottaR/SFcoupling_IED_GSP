@@ -17,12 +17,12 @@ addpath('functions')
 %initialise variables
 time_w=[.3 .7]; %time window for analyses, in sec
 
-%get path where data are (store them in folder above SFcoupling_IED_GSP)
-[datapath,name,ext] = fileparts(pwd);
+%add your own path to the data
+datapath = 'H:\MyPaper\network_harmonics\data';
 
 %load data
-load(fullfile(datapath,'data\func_data'))
-load(fullfile(datapath,'data\struct_data'))
+load(fullfile(datapath,'func_data'))
+load(fullfile(datapath,'struct_data'))
 
 % decompose SC
 [U,LambdaL] = laplacian_decomposition(struct_data.SC  );
@@ -110,7 +110,7 @@ data_GSP2=rmfield(data_GSP1,'step1');
 %     PHIdiag(PHIdiag==0)=-1;
 %     PHI(n,:,:)=diag(PHIdiag);
 % end
-load(fullfile(datapath,'data\PHI'))
+load(fullfile(datapath,'PHI'))
 
 %% PARAGRAPH 2.6.3
 
@@ -145,7 +145,7 @@ end
 %the script 'surrogateSDI.m' takes very long. Load surrogates already computed instead
 
 % surrogateSDI              
-load(fullfile(datapath,'data\results\data_GSP2_surr'))
+load(fullfile(datapath,'results\data_GSP2_surr'))
 
 % --------------------------------STATS -----------------------------------
 %(threshold SDI comparing it with the surrogates SDI)

@@ -8,7 +8,7 @@
 %     % get surrogates SC
 %     W0(n,:,:) = null_model_und_sign(num,10);
 % end
-%save(fullfile(datapath,'data\SC_surrogates'),'W0')
+%save(fullfile(datapath,'SC_surrogates'),'W0')
  
 
 % %decompose W0 and extract the surrogate harmonics (U0)
@@ -19,10 +19,10 @@
 %     U0(n,:,:)=U;
 %     LambdaL0(n,:)=Lambda;
 % end
-% save(fullfile(datapath,'data\SC_surrogates_harmonics'),'U0')
+% save(fullfile(datapath,'SC_surrogates_harmonics'),'U0')
 
 % Loading SURROGATES HARMONICS U0
-load(fullfile(datapath,'data\SC_surrogates_harmonics'))
+load(fullfile(datapath,'SC_surrogates_harmonics'))
 
 %% -------- the following lines do the following: -------------
 % - calculate the surrogate BD (BD of the functional data decomposed on the surrogate
@@ -44,10 +44,10 @@ load(fullfile(datapath,'data\SC_surrogates_harmonics'))
 %     BD_surr(p).BD=surrBD_single_subj_norm_diff;
 % end
 %%store
-% save(fullfile(datapath,'data\results\BD_surr'),'BD_surr')
+% save(fullfile(datapath,'results\BD_surr'),'BD_surr')
 
 % Loading SURROGATES BD 
-load(fullfile(datapath,'data\results\BD_surr'))
+load(fullfile(datapath,'results\BD_surr'))
 
 %% organize the surrogate and the empirical BD and prepare for plot
 for p=1:size(func_data,2)

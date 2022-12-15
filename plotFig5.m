@@ -3,7 +3,7 @@
 lateralization={'Rtle','Ltle'};
 
 %load ROI patch
-load(fullfile(datapath,'data\ROIpatch.mat'))
+load(fullfile(datapath,'ROIpatch.mat'))
 
 for lat=1:size(lateralization,2)
     for p=1:size(pat{1,lat},2)

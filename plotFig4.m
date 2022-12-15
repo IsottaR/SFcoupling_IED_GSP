@@ -3,7 +3,7 @@
 lateralization={'Rtle','Ltle'};
 
 %load ROI patch
-load(fullfile(datapath,'data\ROIpatch.mat'))
+load(fullfile(datapath,'ROIpatch.mat'))
 
 for lat=1: length(lateralization)
         clear surr_thresh
