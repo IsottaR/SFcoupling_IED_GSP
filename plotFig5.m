@@ -10,10 +10,10 @@ for lat=1:size(lateralization,2)
         id_sub=pat{1,lat}(p);
         
         %empirical SDI during cluster C1
-        SDI_all_pat_c1{lat}(:,p)=log(data_GSP2(id_sub).step2.SDIc1);
+        SDI_all_pat_c1{lat}(:,p)=log2(data_GSP2(id_sub).step2.SDIc1);
         
         %empirical SDI during cluster C2
-        SDI_all_pat_c2{lat}(:,p)=log(data_GSP2(id_sub).step2.SDIc2);
+        SDI_all_pat_c2{lat}(:,p)=log2(data_GSP2(id_sub).step2.SDIc2);
     end
     
     %mask of significant ROI (from comparison with surrogates)

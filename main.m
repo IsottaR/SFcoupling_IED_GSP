@@ -160,10 +160,10 @@ for lat=1: size(pat,2)
          idx=pat{1,lat}(p);
 
         % load SDI from surrogates and convert to log(SDI)
-        SDI_surr(:,:,p)=log(data_GSP2_surr(idx).step2.SDIsurr);
+        SDI_surr(:,:,p)=log2(data_GSP2_surr(idx).step2.SDIsurr);
         
         % load empirical SDI and convert to log(SDI)
-        SDI_all_pat(:,p)=log(data_GSP2(idx).step2.SDI);
+        SDI_all_pat(:,p)=log2(data_GSP2(idx).step2.SDI);
     end
     
     %------------ Find significant SDI
