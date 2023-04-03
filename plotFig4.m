@@ -38,11 +38,11 @@ for lat=1: length(lateralization)
     %select the correct threshold, according to the sample size of the
     %group
     if lat==1
-%         threshold=6;%retain ROI significant in at leasts 7/9 patients (75%)
-        threshold=2;%retain ROI significant in at leats 3/9 patients
+        threshold=6;%retain ROI significant in at leasts 7/9 patients (75%)
+%         threshold=2;%retain ROI significant in at leats 3/9 patients
     elseif lat==2
-%         threshold=5;%retain ROI significant in at leasts 6/8 patients (75%)
-        threshold=2;%retain ROI significant in at leats 3/8 patients
+        threshold=5;%retain ROI significant in at leasts 6/8 patients (75%)
+%         threshold=2;%retain ROI significant in at leats 3/8 patients
     end
     
     
