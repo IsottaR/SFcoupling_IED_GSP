@@ -3,6 +3,5 @@ Repository for paper on structure-function coupling on epileptic spikes using gr
 
 Download the preprocessed data from Zenodo: TBC
 
-Run the script main.m to produce the analyses and the figures of the paper
+In the main.m script (line 21), change the path to the data. Run the script main.m to produce the analyses and the figures of the paper
 
-(Change the datapath to your own path where you downloaded the data)
