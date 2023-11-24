@@ -2,7 +2,7 @@
 %new structure for the results
 data_GSP2_surr=rmfield(data_GSP1,'step1');
 for p=1:size(data_GSP1,2)
-    for n=1:size(PHI,1)
+    for n=1:19
         data_sub=data_GSP1(p).step1;
         zX_RS_curr=data_sub.zX_RS;
         
